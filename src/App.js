@@ -15,23 +15,34 @@ class App extends Component {
     }
   }
 
+  gameScore = event => {
+    //if character id === click random number
+    //this.setState(prevState => {
+    // currentScore: this.state.currentScore +1
+    // })
 
+    // if currentScore > topScore
+    // this.setState(prevState => {topScore: this.state.currentScore})
+    console.log(this.id)
+
+  }
 
   render() {
 
-    const characterData = Data.map(item => <Card key={item.id} props={item} />);
-    // console.log(Data[0].name)
-
     return (
-      <Wrapper>
-        <div>
+      <div>
+        <Navbar />
+        <Wrapper>
+
           {/* Nav Bar
         Nav bar will contain the title, button click event & current score & top score, this will require the state to be changed and modified  */}
-          <Navbar>NAVBAR - CLICK BUTTON - SCORES GO HERE</Navbar>
 
-          {characterData}
-        </div>
-      </Wrapper>
+          {Data.map(item => <Card key={item.id} props={item}
+            onClick={this.gameScore(item.id)}
+          />)}
+
+        </Wrapper>
+      </div>
     )
   }
 }
