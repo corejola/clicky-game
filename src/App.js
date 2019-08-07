@@ -7,52 +7,47 @@ import Data from "../src/data/characters.json"
 
 class App extends Component {
   constructor() {
-    super()
-    // this is the state data
+    super();
     this.state = {
+      clicked: false,
       currentScore: 0,
       topScore: 0,
+      Data,
     }
-  }
-
-  // handleChange
-  randomNumber() {
-    return Math.floor(Math.random() * Data.length) + 1;
+    this.clickedEvent = this.clickedEvent.bind(this)
   }
 
   shuffleCard() {
 
   }
 
-  gameScore = (event) => {
-    //if character id === click random number
-    //this.setState(prevState => {
-    // currentScore: this.state.currentScore +1
-    // })
 
-    const { id } = event.target
+  game() {
 
-    if (id === "6") {
+    // if clicked === false, current Score +1 
+  }
+
+  clickedEvent(event) {
+    const { isClicked, alt } = event.target
+
+    console.log(`Name: ${[alt]} &  Clicked = ${[isClicked]}`)
+    // if state of the card is false, update state.currentScore +1
+    // else()
+    if ([isClicked] === false) {
+      console.log("TRIGGERED")
+      [isClicked] = true
       this.setState({
         currentScore: this.state.currentScore + 1
       })
-      console.log("Current Score: " + this.state.currentScore)
     }
-
-    // if currentScore > topScore
-    // this.setState(prevState => {topScore: this.state.currentScore})
-    if (this.state.currentScore > this.state.topScore) {
+    if ([isClicked] === true) {
+      console.log("CURRENT SCORE RESET")
       this.setState({
-        topScore: this.state.currentScore
+        currentScore: this.state.currentScore = 0
       })
     }
-    else {
-      console.log("Wrong selection")
-      // shuffle <Card />
-    }
-
-    console.log(`Clicked ${event.target.id}`)
   }
+
 
   render() {
     return (
@@ -63,8 +58,7 @@ class App extends Component {
           {/* Nav Bar
         Nav bar will contain the title, button click event & current score & top score, this will require the state to be changed and modified  */}
 
-          {Data.map(item => <Card key={item.id} props={item} onClick={this.gameScore} />)}
-
+          {this.state.Data.map(item => <Card key={item.id} props={item} onClick={this.clickedEvent} />)}
         </Wrapper>
       </div>
     )
