@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import "./style.css";
 
-class Card extends React.Component {
-    state = {
-        clicked: false
+class Card extends Component {
+    constructor() {
+        super();
+        this.state = {
+            isClicked: false
+        }
+        this.handleClick = this.handleClick.bind(this)
     }
 
     handleClick() {
-        this.setState({ clicked: this.state.clicked = true })
-        console.log(this.state.clicked)
+        console.log("before setState " + this.state.isClicked)
+        this.setState({ isClicked: this.state.isClicked = true })
+        console.log("after setState " + this.state.isClicked)
     }
 
     render() {
@@ -20,7 +25,8 @@ class Card extends React.Component {
             //props.onClick runs the parent function gameScore
             < div className="card" onClick={this.props.onClick}>
                 <div className="img-container" id={this.props.props.id} >
-                    <img id={this.props.props.id} alt={this.props.props.name} src={this.props.props.image} onCick={this.handleClick} />
+                    <img id={this.props.props.id} alt={this.props.props.name} src={this.props.props.image} onClick={this.handleClick} state={this.state.isClicked} />
+                    {console.log(this.state.isClicked)}
                 </div>
             </div >
         )
