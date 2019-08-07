@@ -27,7 +27,9 @@ class Card extends Component {
             //props.onClick runs the parent function gameScore
             < div className="card" onClick={this.props.onClick}>
                 <div className="img-container" id={this.props.props.id} >
-                    <img id={this.props.props.id} alt={this.props.props.name} src={this.props.props.image} onClick={this.handleClick} state={this.state.isClicked} />
+                    <img id={this.props.props.id} alt={this.props.props.name} src={this.props.props.image}
+                    // onClick={this.handleClick} state={this.state.isClicked} 
+                    />
                     {/* {console.log(this.state.isClicked)} */}
                 </div>
             </div >

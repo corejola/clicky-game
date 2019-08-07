@@ -21,38 +21,35 @@ class App extends Component {
 
   }
 
-
-  game() {
-
-    // if clicked === false, current Score +1 
+  gameScore() {
+    return this.currentScore > this.topScore ? this.setState({ topScore: this.currentScore }) : null;
   }
 
   clickedEvent(event) {
     // state of the card is captured on event.target.isClicked, which is the state defaulted as false.
     const { id } = event.target
-    console.log("CLICKED")
-    for (var i = 0; i < this.state.clicked.length; i++) {
-      if ([id] !== this.state.clicked[i]) {
-        this.setState = (prevState) => ({
-          clicked: [...prevState.clicked, [id]],
-          currentScore: this.state.currentScore + 1
-        })
-        console.log(this.state.clicked)
-      }
+    console.log(`CLICKED target ID-0${[id]}`)
 
-      if ([id] === this.state.clicked[i]) {
-        this.setState({
-          currentScore: 0
-        })
-      }
+    if ([id] !== this.state.clicked.filter(item => item === [id])) {
+      this.setState({
+        // clicked: this.state.clicked.push([id]),
+        currentScore: this.state.currentScore + 1
+      })
+      this.gameScore()
+      this.state.clicked.push([id])
+      console.log(this.state.clicked)
+
     }
-
-    return this.currentScore > this.topScore ? this.setState({ topScore: this.currentScore }) : null
+    if ([id] === this.state.clicked.filter(item => item === [id])) {
+      this.setState({
+        clicked: 0,
+        currentScore: 0
+      })
+    }
+    // return this.currentScore > this.topScore ? this.setState({ topScore: this.currentScore }) : null
 
     // if state of the card is false, update state.currentScore + 1
     // else()
-
-
   }
 
 
