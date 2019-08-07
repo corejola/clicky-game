@@ -2,73 +2,61 @@
   {
     "id": 1,
     "name": "Wolverine",
-    "image": "https://thumbs.gfycat.com/TemptingNervousAidi-max-1mb.gif",
-    "clicked": "false"
+    "image": "https://thumbs.gfycat.com/TemptingNervousAidi-max-1mb.gif"
   },
   {
     "id": 2,
     "name": "Cyclops",
-    "image": "https://thumbs.gfycat.com/FlickeringPlushEarthworm-max-1mb.gif",
-    "clicked": "false"
+    "image": "https://thumbs.gfycat.com/FlickeringPlushEarthworm-max-1mb.gif"
   },
   {
     "id": 3,
     "name": "Omega Red",
-    "image": "https://www.gifmania.co.uk/Comics-Animated-Gifs/Animated-X-Men/Omega-Red/omega-red1-34705.gif",
-    "clicked": "false"
+    "image": "https://www.gifmania.co.uk/Comics-Animated-Gifs/Animated-X-Men/Omega-Red/omega-red1-34705.gif"
   },
   {
     "id": 4,
     "name": "Juggernaut",
-    "image": "https://www.fightersgeneration.com/characters2/juggy-walk.gif",
-    "clicked": "false"
+    "image": "https://www.fightersgeneration.com/characters2/juggy-walk.gif"
   },
   {
     "id": 5,
     "name": "Venom",
-    "image": "https://66.media.tumblr.com/7880d1b77f11703797122887f5fa3fe8/tumblr_p6n1533D591whhc5uo1_400.gif",
-    "clicked": "false"
+    "image": "https://66.media.tumblr.com/7880d1b77f11703797122887f5fa3fe8/tumblr_p6n1533D591whhc5uo1_400.gif"
   },
   {
     "id": 6,
     "name": "Spiderman",
-    "image": "https://media0.giphy.com/media/bCndcCgtjIJS8/giphy.gif",
-    "clicked": "false"
+    "image": "https://media0.giphy.com/media/bCndcCgtjIJS8/giphy.gif"
   },
   {
     "id": 7,
     "name": "Captain America",
-    "image": "https://thumbs.gfycat.com/SmallWideCirriped-max-1mb.gif",
-    "clicked": "false"
+    "image": "https://thumbs.gfycat.com/SmallWideCirriped-max-1mb.gif"
   },
   {
     "id": 8,
     "name": "Magneto",
-    "image": "https://thumbs.gfycat.com/SimplisticSlightGlowworm-max-1mb.gif",
-    "clicked": "false"
+    "image": "https://thumbs.gfycat.com/SimplisticSlightGlowworm-max-1mb.gif"
   },
   {
     "id": 9,
     "name": "Storm",
-    "image": "http://33.media.tumblr.com/62c2eb022a148ce8d28017e4a58c9607/tumblr_mi64rzGDs81r72ht7o1_500.gif",
-    "clicked": "false"
+    "image": "http://33.media.tumblr.com/62c2eb022a148ce8d28017e4a58c9607/tumblr_mi64rzGDs81r72ht7o1_500.gif"
   },
   {
     "id": 10,
     "name": "Iron Man",
-    "image": "https://media.giphy.com/media/TK4TmGMzypaso/giphy.gif",
-    "clicked": "false"
+    "image": "https://media.giphy.com/media/TK4TmGMzypaso/giphy.gif"
   },
   {
     "id": 11,
     "name": "Dr Doom",
-    "image": "https://i.pinimg.com/originals/26/c8/93/26c8936ebccf7df9283b7f3599beae39.gif",
-    "clicked": "false"
+    "image": "https://i.pinimg.com/originals/26/c8/93/26c8936ebccf7df9283b7f3599beae39.gif"
   },
   {
     "id": 12,
     "name": "Rogue",
-    "image": "https://img.fireden.net/v/image/1488/21/1488215216441.gif",
-    "clicked": "false"
+    "image": "https://img.fireden.net/v/image/1488/21/1488215216441.gif"
   }
 ]

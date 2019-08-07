@@ -28,23 +28,22 @@ class App extends Component {
   }
 
   clickedEvent(event) {
-    const { isClicked, alt } = event.target
+    // state of the card is captured on event.target.isClicked, which is the state defaulted as false.
+    const { isClicked } = event.target
 
-    console.log(`Name: ${[alt]} &  Clicked = ${[isClicked]}`)
+    console.log(`${typeof isClicked}`)
     // if state of the card is false, update state.currentScore +1
     // else()
     if ([isClicked] === false) {
       console.log("TRIGGERED")
-      [isClicked] = true
+
       this.setState({
         currentScore: this.state.currentScore + 1
-      })
+      });
     }
     if ([isClicked] === true) {
-      console.log("CURRENT SCORE RESET")
-      this.setState({
-        currentScore: this.state.currentScore = 0
-      })
+      console.log("CURRENT SCORE RESET");
+      this.setState({ currentScore: this.state.currentScore = 0 })
     }
   }
 
