@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import "./style.css";
 
+//style components
+
 class Card extends Component {
     constructor() {
         super();
@@ -13,7 +15,7 @@ class Card extends Component {
     handleClick() {
         // console.log("before setState " + this.state.isClicked)
         if (this.state.isClicked === false) {
-            this.setState({ isClicked: this.state.isClicked = true })
+            this.setState({ isClicked: !this.state.isClicked })
         }
         // console.log("after setState " + this.state.isClicked)
     }
@@ -21,6 +23,7 @@ class Card extends Component {
     render() {
         // console.log(props.props.image)
         // console.log(this.state.clicked)
+        // destructor props
         return (
             /* onClick={} passed function from parent, App.js */
             //props.props displays the data from the characters.json information
@@ -28,7 +31,7 @@ class Card extends Component {
             < div className="card" onClick={this.props.onClick}>
                 <div className="img-container" id={this.props.props.id} >
                     <img id={this.props.props.id} alt={this.props.props.name} src={this.props.props.image}
-                    // onClick={this.handleClick} state={this.state.isClicked} 
+                        onClick={this.handleClick} state={this.state.isClicked}
                     />
                     {/* {console.log(this.state.isClicked)} */}
                 </div>

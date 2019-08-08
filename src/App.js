@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   shuffleCard() {
-
+    //
   }
 
   gameScore() {
@@ -28,9 +28,10 @@ class App extends Component {
   clickedEvent(event) {
     // state of the card is captured on event.target.isClicked, which is the state defaulted as false.
     const { id } = event.target
+    const { clicked } = this.state
     console.log(`CLICKED target ID-0${[id]}`)
 
-    if ([id] !== this.state.clicked.filter(item => item === [id])) {
+    if ([id] !== clicked.filter(item => item === [id])) {
       this.setState({
         // clicked: this.state.clicked.push([id]),
         currentScore: this.state.currentScore + 1
