@@ -9,44 +9,52 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      clicked: [],
+      clicked: null,
       currentScore: 0,
       topScore: 0,
-      Data,
+      charData: Data,
     }
     this.clickedEvent = this.clickedEvent.bind(this)
   }
 
-  shuffleCard() {
-    //
+  shuffleData(array) {
+    // use to shuffle data array layout
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   }
 
   gameScore() {
-    return this.currentScore > this.topScore ? this.setState({ topScore: this.currentScore }) : null;
+
+    return this.state.currentScore > this.state.topScore ? this.setState({ topScore: this.state.currentScore }) : null;
   }
 
   clickedEvent(event) {
     // state of the card is captured on event.target.isClicked, which is the state defaulted as false.
+    // access the state of the card (child) in App (parent)
     const { id } = event.target
-    const { clicked } = this.state
+    const { clicked, currentScore, charData } = this.state
+
     console.log(`CLICKED target ID-0${[id]}`)
+    console.log(clicked)
 
-    if ([id] !== clicked.filter(item => item === [id])) {
-      this.setState({
-        // clicked: this.state.clicked.push([id]),
-        currentScore: this.state.currentScore + 1
-      })
-      this.gameScore()
-      this.state.clicked.push([id])
-      console.log(this.state.clicked)
+    // if (clicked.indexOf([id]) !== [id]) {
+    //   this.setState({
+    //     // if going with the empty array way, use the indexof method.
+    //     // clicked: this.state.clicked.push([id]),
+    //     currentScore: currentScore + 1
+    //   })
 
-    }
-    if ([id] === this.state.clicked.filter(item => item === [id])) {
-      this.setState({
-        clicked: 0,
-        currentScore: 0
-      })
-    }
+    //   console.log(clicked)
+    // }
+
+    // if ([id] === clicked.filter(item => item === [id])) {
+    //   this.setState({
+    //     clicked: 0,
+    //     currentScore: 0
+    //   })
+    // }
     // return this.currentScore > this.topScore ? this.setState({ topScore: this.currentScore }) : null
 
     // if state of the card is false, update state.currentScore + 1
@@ -55,6 +63,10 @@ class App extends Component {
 
 
   render() {
+    // desctructor state components
+    const { charData } = this.state
+    this.shuffleData(charData)
+
     return (
       <div>
         <Navbar score={this.state} />
@@ -63,7 +75,7 @@ class App extends Component {
           {/* Nav Bar
         Nav bar will contain the title, button click event & current score & top score, this will require the state to be changed and modified  */}
           {/* run shuffleCard method to shuffle the Data.map array upon the click event */}
-          {this.state.Data.map(item => <Card key={item.id} props={item} onClick={this.clickedEvent} />)}
+          {charData.map(item => <Card key={item.id} props={item} onClick={this.clickedEvent} />)}
         </Wrapper>
       </div>
     )
