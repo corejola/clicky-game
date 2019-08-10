@@ -9,19 +9,20 @@ class Card extends Component {
         this.state = {
             isClicked: false
         }
-        this.handleClick = this.handleClick.bind(this)
+        // this.handleClick = this.handleClick.bind(this)
     }
 
-    handleClick() {
-        // console.log("before setState " + this.state.isClicked)
-        if (this.state.isClicked === false) {
-            this.setState({ isClicked: this.state.isClicked = true })
-        }
-        else {
-            this.setState({ isClicked: this.state.isClicked = false })
-        }
-        console.log("Updated State " + this.state.isClicked)
-    }
+    // 
+    // handleClick() {
+    //     // console.log("before setState " + this.state.isClicked)
+    //     if (this.state.isClicked === false) {
+    //         this.setState({ isClicked: this.state.isClicked = true })
+    //     }
+    //     else {
+    //         this.setState({ isClicked: this.state.isClicked = false })
+    //     }
+    //     console.log("Updated State " + this.state.isClicked)
+    // }
 
     render() {
         // console.log(props.props.image)
@@ -34,8 +35,8 @@ class Card extends Component {
             //props.onClick runs the parent function gameScore
             < div className="card" onClick={this.props.onClick}>
                 <div className="img-container" id={id} >
-                    <img id={id} alt={name} src={image}
-                        onClick={this.handleClick} state={this.state.isClicked} />
+                    <img id={id} alt={name} src={image} />
+                    {/* onClick={this.handleClick} state={this.state.isClicked} these code snippets are not used */}
                     {/* {console.log(this.state.isClicked)} */}
                 </div>
             </div >
