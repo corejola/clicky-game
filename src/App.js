@@ -12,34 +12,67 @@ class App extends Component {
       clicked: [],
       currentScore: 0,
       topScore: 0,
-      Data,
+      charData: Data,
     }
     this.clickedEvent = this.clickedEvent.bind(this)
   }
 
-  shuffleCard() {
+  shuffleData(array) {
+    // use to shuffle data array layout
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
 
   }
 
-
-  game() {
-
-    // if clicked === false, current Score +1 
+  gameScore() {
+    //  checks the state of the score and updates accordingly
+    return this.state.currentScore > this.state.topScore ? this.setState({ topScore: this.state.currentScore }) : null;
   }
 
   clickedEvent(event) {
-    // state of the card is captured on event.target.isClicked, which is the state defaulted as false.
-    const { id } = event.target
-    console.log(event.target)
-    this.setState({})
-    // if state of the card is false, update state.currentScore + 1
-    // else()
 
+    this.gameScore()
+
+    // access the state of the card (child) in App (parent)
+    const { id } = event.target;
+    const { clicked, currentScore, charData } = this.state;
+
+    this.setState(prevState => ({
+      clicked: [...prevState.clicked, id]
+    })
+    )
+
+    // console.log(this.state.clicked)
+
+
+    if (clicked.indexOf(id) === -1) {
+      this.gameScore()
+      this.setState({
+        // if going with the empty array way, use the indexof method.
+        // clicked: this.state.clicked.push([id]),
+        currentScore: currentScore + 1
+      })
+
+      // console.log("here")
+    }
+
+    else {
+      this.setState({
+        clicked: [],
+        currentScore: 0
+      })
+    }
 
   }
 
 
   render() {
+    // desctructor state components
+    const { charData } = this.state
+    this.shuffleData(charData)
+
     return (
       <div>
         <Navbar score={this.state} />
@@ -48,7 +81,12 @@ class App extends Component {
           {/* Nav Bar
         Nav bar will contain the title, button click event & current score & top score, this will require the state to be changed and modified  */}
           {/* run shuffleCard method to shuffle the Data.map array upon the click event */}
-          {this.state.Data.map(item => <Card key={item.id} props={item} onClick={this.clickedEvent} />)}
+          {charData.map(item =>
+            <Card
+              shuffleCard={this.shuffle}
+              key={item.id}
+              props={item}
+              onClick={this.clickedEvent} />)}
         </Wrapper>
       </div>
     )
