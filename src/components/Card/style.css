@@ -1,10 +1,10 @@
 .card {
   background: #fff;
   border-radius: 2px;
-  height: 250px;
+  height: 200px;
   margin: 1rem;
   position: relative;
-  width: 250px;
+  width: 200px;
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   text-align: left;
 }
@@ -20,9 +20,7 @@
 }
 
 .card > .content {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 15px;
+  width: 60%;
 }
 
 .card > .content > ul {
@@ -33,7 +31,7 @@
   margin-top: 18px;
 }
 
-.card > .remove {
+/* .card > .remove {
   color: #ff1744;
   font-size: 48px;
   position: absolute;
@@ -44,4 +42,4 @@
 
 .card > .remove:hover {
   color: #d50000;
-}
+} */
