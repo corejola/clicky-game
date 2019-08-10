@@ -1,4 +1,6 @@
-# Clicky Game
+# Marvel Clicky Game
+
+![Demo](src/data/assets/clickyGame.gif)
 
 ## Functionality 
 1. Upon game load, the characters layout will shuffle.
