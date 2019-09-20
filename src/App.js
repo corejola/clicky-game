@@ -53,7 +53,7 @@ class App extends Component {
         // if going with the empty array way, use the indexof method.
         // clicked: this.state.clicked.push([id]),
         currentScore: currentScore + 1
-      })
+      }, () => { this.gameScore() })
 
       // console.log("here")
     }
